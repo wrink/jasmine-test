@@ -1,3 +1,5 @@
-<h1>
-  {{title}}
-</h1>
+<!-- Takes a natural number X through input and displays the Xth fibonacci number
+[(ngModel)] specified that ngModel is a two-way property-->
+
+<h2>fibonacci({{number(x) || 'n'}}) = {{fibonacci(x) || 'fibonacci(n-1) + fibonacci(n-2)'}}</h2>
+<input [(ngModel)]="x" placeholder="x">

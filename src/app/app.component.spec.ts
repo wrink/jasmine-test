@@ -2,6 +2,8 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+// FormsModule must be imported for all inputs
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -9,6 +11,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [FormsModule]
     });
     TestBed.compileComponents();
   });
@@ -29,6 +32,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    //compiled.querySelector('input').textContent = '1'
+    expect(compiled.querySelector('h2').textContent).toEqual('fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)');
   }));
 });
